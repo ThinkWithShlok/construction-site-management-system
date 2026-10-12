@@ -1,0 +1,299 @@
+.workers-page {
+    padding: 24px 32px;
+}
+
+.workers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.worker-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: var(--transition);
+}
+
+.worker-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.worker-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.worker-card-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.worker-card-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.worker-card-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.worker-card-role {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+}
+
+.worker-card-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.worker-card-actions button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    background: var(--bg-light);
+    color: var(--text-secondary);
+}
+
+.worker-card-actions button:hover {
+    background: var(--primary);
+    color: var(--text-white);
+}
+
+.worker-card-actions button.delete:hover {
+    background: var(--danger);
+}
+
+.worker-card-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.worker-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.worker-detail-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.worker-detail-value {
+    font-size: 0.8125rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .workers-page {
+        padding: 16px;
+    }
+
+    .workers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Attendance row on worker card ────── */
+.worker-attendance-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+    gap: 8px;
+}
+
+.worker-att-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.worker-att-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.att-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border-light);
+    background: transparent;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--text-muted);
+}
+
+.att-btn.present:hover,
+.att-btn.present.active {
+    background: var(--success-bg);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.att-btn.absent:hover,
+.att-btn.absent.active {
+    background: var(--danger-bg);
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.att-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ── Weekly wage panel ────── */
+.wage-panel {
+    margin-top: 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-lg);
+    padding: 20px 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.wage-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.wage-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.wage-panel-header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.wage-panel-header p {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.wage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.wage-table th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.wage-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+.wage-table tr:last-child td {
+    border-bottom: none;
+}
+
+.wage-worker-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wage-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.days-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-light);
+    color: var(--text-muted);
+}
+
+.days-badge.has-days {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+/* ── Profile-sourced worker card ────── */
+.worker-card-profile {
+    border-color: var(--primary-light, #f97316);
+    border-style: dashed;
+}
+
+.profile-source-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: rgba(249, 115, 22, 0.12);
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
